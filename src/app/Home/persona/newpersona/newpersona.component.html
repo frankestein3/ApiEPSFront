@@ -1,0 +1,69 @@
+<mat-grid-list cols="" rowHeight="2:3">
+    <mat-card class="card-options ">
+        <mat-card-title>NUEVA PERSONA</mat-card-title>
+        <form (submit)="onSubmit()" [formGroup]="new" >
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Id</mat-label>
+                <input matInput   formControlName="nmid"  id="nmid"     type="number"  required>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Documento</mat-label>
+                <input matInput   formControlName="cddocumento"  id="cddocumento"     type="text"  required>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input matInput   formControlName="dsnombres"  id="dsnombres"     type="text"  required>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Apellido</mat-label>
+                <input matInput   formControlName="dsapellidos"  id="dsapellidos"     type="text"  required>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Fecha de Nacimiento</mat-label>
+                <input matInput   formControlName="fenacimiento"  id="fenacimiento"     type="datetime"  required>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Tipo</mat-label>
+                <input matInput   formControlName="cdtipo"  id="cdtipo"     type="text"  required>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Genero</mat-label>
+                <input matInput   formControlName="cdgenero"  id="cdgenero"     type="text"  required>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Fecha de Registro</mat-label>
+                <input matInput   formControlName="feregistro"  id="feregistro"     type="datetime"  required>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Fecha de Baja</mat-label>
+                <input matInput   formControlName="febaja"  id="febaja"     type="datetime"  required>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Cd Usuario</mat-label>
+                <input matInput   formControlName="cdusuario"  id="cdusuario"    type="text"  required>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Direccion</mat-label>
+                <input matInput   formControlName="dsdireccion"  id="dsdireccion"     type="text"  required>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Foto</mat-label>
+                <input matInput   formControlName="dsphoto"  id="dsphoto"     type="text"  required>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Telefono Fijo</mat-label>
+                <input matInput   formControlName="cdtelefono_fijo"  id="cdtelefono_fijo"     type="text"  required>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Celular</mat-label>
+                <input matInput   formControlName="cdtelefono_movil"  id="cdtelefono_movil"     type="text"  required>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput   formControlName="dsemail"  id="dsemail"     type="text"  required>
+            </mat-form-field>
+
+            <button type="submit" [disabled]="new.invalid" mat-button >Agregar</button>
+        </form>
+    </mat-card>  
+</mat-grid-list>

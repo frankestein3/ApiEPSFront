@@ -1,0 +1,50 @@
+<mat-grid-list cols="" rowHeight="2:3">
+    <mat-card class="card-options ">
+        <mat-card-title>CONSULTAR PACIENTE</mat-card-title>
+        <form (ngSubmit)="onSubmit(consulta.value)" [formGroup]="consulta" >
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Identificación</mat-label>
+                <input matInput   formControlName="id"  id="id"   placeholder="identificacion"  type="number"  required>
+            </mat-form-field>
+            <button type="submit" [disabled]="consulta.invalid" mat-button >Consultar</button>
+        </form>
+    </mat-card>  
+</mat-grid-list>
+    <div *ngIf="band==true">
+       <table class="table">
+        <thead>
+            <tr>
+
+                <th scope="col">Identificación</th>
+                <th>Id Persona</th>
+                <th>Id Medico </th>
+                <th>EPS</th>
+                <th>ARL</th>    
+                <th>Fecha de Registro</th>
+                <th>Fecha de Baja</th>
+                <th>Cd Usuario</th>
+                <th>Condicion</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <th scope="row">{{paciente?.nmid}}</th>
+              <td>{{paciente?.nmid_persona}}</td>
+              <td>{{paciente?.nmid_medicotra}}</td>
+              <td>{{paciente?.dseps}}</td>
+              <td>{{paciente?.dsarl}}</td>
+              <td>{{paciente?.feregistro}}</td>
+              <td>{{paciente?.febaja}}</td>
+              <td>{{paciente?.cdusuario}}</td>
+              <td>{{paciente?.dscondicion}}</td>
+              
+
+
+            </tr>
+            <tr>
+ 
+
+          </tbody>
+       </table>
+    </div>

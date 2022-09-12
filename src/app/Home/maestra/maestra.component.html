@@ -1,0 +1,39 @@
+<mat-grid-list cols="" rowHeight="2:3">
+    <mat-card class="card-options ">
+        <mat-card-title>CONSULTAR MAESTRA</mat-card-title>
+        <form (ngSubmit)="onSubmit(consulta.value)" [formGroup]="consulta" >
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Identificación</mat-label>
+                <input matInput   formControlName="id"  id="id"   placeholder="identificacion"  type="text"  required>
+            </mat-form-field>
+            <button type="submit" [disabled]="consulta.invalid" mat-button >Consultar</button>
+        </form>
+    </mat-card>  
+</mat-grid-list>
+    <div *ngIf="band==true">
+       <table class="table">
+        <thead>
+            <tr>
+
+                <th scope="col">Identificación</th>
+                <th>Cd Maestro</th>
+                <th>DS Maestro </th>              
+                <th>Fecha de Baja</th>
+
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <th scope="row">{{maestra?.nmaestro}}</th>
+              <td>{{maestra?.cdmaestro}}</td>
+              <td>{{maestra?.dsmaestro}}</td>
+              <td>{{maestra?.febaja}}</td>
+
+            </tr>
+            <tr>
+ 
+
+          </tbody>
+       </table>
+    </div>

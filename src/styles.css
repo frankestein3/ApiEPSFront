@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto Slab, 'Open Sans', Arial, sans-serif; }
+.mat-card{
+    background-color: cadetblue;
+    font-family: Roboto Slab, 'Open Sans', Arial, sans-serif;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    
+    
+}
+.card-options{
+    background-color: aliceblue;
+    border-radius: 2px;
+    border-color: beige;    
+    width: 40%;
+    color: black;
+    position: absolute;
+    display: block;
+    margin-top: 2rem;
+    margin-left: 30%;
+    
+}
+form{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    font-size: 15px;
+    margin-top: 1rem;
+    display: contents;
+}
+mat-form-field {
+   display: block !important;
+  
+}
+.table{
+    margin-top: 1rem;
+}
+footer{
+    font-family: Roboto Slab, 'Open Sans', Arial, sans-serif;
+    color: grey;
+    text-align: center;
+    margin-top: 18%;
+}

@@ -1,0 +1,59 @@
+<mat-grid-list cols="" rowHeight="2:3">
+    <mat-card class="card-options ">
+        <mat-card-title>CONSULTAR PERSONA</mat-card-title>
+        <form (ngSubmit)="onSubmit(consulta.value)" [formGroup]="consulta" >
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Identificación</mat-label>
+                <input matInput   formControlName="id"  id="id"   placeholder="identificacion"  type="number"  required>
+            </mat-form-field>
+            <button type="submit" [disabled]="consulta.invalid" mat-button >Consultar</button>
+        </form>
+    </mat-card>  
+</mat-grid-list>
+    <div *ngIf="band==true">
+       <table class="table">
+        <thead>
+            <tr>
+
+                <th scope="col">Identificación</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Tipo</th>
+                <th>Genero</th>
+                <th>Fecha de Registro</th>
+                <th>Fecha de Baja</th>
+                <th>Cd Usuario</th>
+                <th>Direccion</th>
+                <th>Foto</th>
+                <th>Telefono Fijo</th>
+                <th>Celular</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <th scope="row">{{persona?.cddocumento}}</th>
+              <td>{{persona?.dsnombres}}</td>
+              <td>{{persona?.dsapellidos}}</td>
+              <td>{{persona?.fenacimiento}}</td>
+              <td>{{persona?.cdtipo}}</td>
+              <td>{{persona?.cdgenero}}</td>
+              <td>{{persona?.feregistro}}</td>
+              <td>{{persona?.febaja}}</td>
+              <td>{{persona?.cdusuario}}</td>
+              <td>{{persona?.dsdireccion}}</td>
+              <td>{{persona?.dsphoto}}</td>
+              <td>{{persona?.cdtelefono_fijo}}</td>
+              <td>{{persona?.cdtelefono_movil}}</td>
+              <td>{{persona?.dsemail}}</td>
+
+
+            </tr>
+            <tr>
+ 
+
+          </tbody>
+       </table>
+    </div>
+

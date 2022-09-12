@@ -1,0 +1,146 @@
+
+
+<mat-grid-list cols="2" rowHeight="2:3">
+    <mat-card class="card-options">
+        <mat-card-title>PERSONA</mat-card-title>
+        
+        <mat-card-actions>
+        <button mat-button [routerLink]="['/newpersona']">Agregar</button>
+        <button mat-button [routerLink]="['/actualizarpersona']">Actualizar</button>
+        <button mat-button [routerLink]="['/persona']">Consultar</button>
+        <button mat-button (click)="consultarPersonas()">Reporte</button>
+       
+        </mat-card-actions>
+    </mat-card>
+    <mat-card class="card-options">
+        <mat-card-title>PACIENTE</mat-card-title>
+        
+        <mat-card-actions>
+        <button mat-button [routerLink]="['/newpaciente']">Agregar</button>
+        <button mat-button [routerLink]="['/actualizarpaciente']">Actualizar</button>
+        <button mat-button [routerLink]="['/paciente']">Consultar</button>
+        <button mat-button (click)="consultar()">Reporte</button>
+
+        </mat-card-actions>
+    </mat-card>
+    <mat-card class="card-options">
+        <mat-card-title>MAESTRA</mat-card-title>
+        
+        <mat-card-actions>
+        <button mat-button [routerLink]="['/newmaestra']">Agregar</button>
+        <button mat-button [routerLink]="['/editmaestra']">Actualizar</button>
+        <button mat-button [routerLink]="['/maestra']">Consultar</button>
+        <button mat-button (click)="consultarMaestras()">Reporte</button>
+
+        </mat-card-actions>
+    </mat-card>
+</mat-grid-list>
+<div *ngIf="band==true">
+    <table class="table">
+     <thead>
+         <tr >
+
+             <th scope="col">Identificación</th>
+             <th>Id Persona</th>
+             <th>Id Medico </th>
+             <th>EPS</th>
+             <th>ARL</th>    
+             <th>Fecha de Registro</th>
+             <th>Fecha de Baja</th>
+             <th>Cd Usuario</th>
+             <th>Condicion</th>
+             
+         </tr>
+     </thead>
+     <tbody>
+         <tr *ngFor="let paciente of pacientes">
+           <th scope="row">{{paciente?.nmid}}</th>
+           <td>{{paciente?.nmid_persona}}</td>
+           <td>{{paciente?.nmid_medicotra}}</td>
+           <td>{{paciente?.dseps}}</td>
+           <td>{{paciente?.dsarl}}</td>
+           <td>{{paciente?.feregistro}}</td>
+           <td>{{paciente?.febaja}}</td>
+           <td>{{paciente?.cdusuario}}</td>
+           <td>{{paciente?.dscondicion}}</td>
+         </tr>
+         <tr>
+
+
+       </tbody>
+    </table>
+ </div>
+ <div *ngIf="bandpersonas==true">
+    <table class="table">
+     <thead>
+         <tr>
+
+             <th scope="col">Identificación</th>
+             <th>Nombre</th>
+             <th>Apellido</th>
+             <th>Fecha de Nacimiento</th>
+             <th>Tipo</th>
+             <th>Genero</th>
+             <th>Fecha de Registro</th>
+             <th>Fecha de Baja</th>
+             <th>Cd Usuario</th>
+             <th>Direccion</th>
+             <th>Foto</th>
+             <th>Telefono Fijo</th>
+             <th>Celular</th>
+             <th>Email</th>
+         </tr>
+     </thead>
+     <tbody>
+         <tr *ngFor="let persona of personas">
+           <th scope="row">{{persona?.cddocumento}}</th>
+           <td>{{persona?.dsnombres}}</td>
+           <td>{{persona?.dsapellidos}}</td>
+           <td>{{persona?.fenacimiento}}</td>
+           <td>{{persona?.cdtipo}}</td>
+           <td>{{persona?.cdgenero}}</td>
+           <td>{{persona?.feregistro}}</td>
+           <td>{{persona?.febaja}}</td>
+           <td>{{persona?.cdusuario}}</td>
+           <td>{{persona?.dsdireccion}}</td>
+           <td>{{persona?.dsphoto}}</td>
+           <td>{{persona?.cdtelefono_fijo}}</td>
+           <td>{{persona?.cdtelefono_movil}}</td>
+           <td>{{persona?.dsemail}}</td>
+
+
+         </tr>
+         <tr>
+
+
+       </tbody>
+    </table>
+ </div>
+ <div *ngIf="bandmaestra==true">
+    <table class="table">
+     <thead>
+         <tr>
+
+             <th scope="col">Identificación</th>
+             <th>Cd Maestro</th>
+             <th>DS Maestro </th>              
+             <th>Fecha de Baja</th>
+
+             
+         </tr>
+     </thead>
+     <tbody>
+         <tr *ngFor="let maestra of maestras">
+           <th scope="row">{{maestra?.nmaestro}}</th>
+           <td>{{maestra?.cdmaestro}}</td>
+           <td>{{maestra?.dsmaestro}}</td>
+           <td>{{maestra?.febaja}}</td>
+
+         </tr>
+         <tr>
+
+
+       </tbody>
+    </table>
+ </div>
+

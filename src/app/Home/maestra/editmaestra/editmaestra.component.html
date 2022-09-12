@@ -1,0 +1,27 @@
+<mat-grid-list cols="" rowHeight="2:3">
+    <mat-card class="card-options ">
+        <mat-card-title>ACTUALIZAR MAESTRA</mat-card-title>
+        <form (submit)="onSubmit()" [formGroup]="update" >
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Identificación</mat-label>
+                <input matInput   formControlName="nmaestro"  id="nmaestro"     type="text"  required>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Cd Maestro</mat-label>
+                <input matInput   formControlName="cdmaestro"  id="cdmaestro"     type="text"  required>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>DS Maestro</mat-label>
+                <input matInput   formControlName="dsmaestro"  id="dsmaestro"     type="text"  required>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Fecha de Baja</mat-label>
+                <input matInput   formControlName="febaja"  id="febaja"     type="datetime"  required>
+            </mat-form-field>          
+            
+            <button type="submit" [disabled]="update.invalid" mat-button >Actualizar</button>
+        </form>
+    </mat-card>  
+</mat-grid-list>
+
+
